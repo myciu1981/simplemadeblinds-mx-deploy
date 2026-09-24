@@ -23,18 +23,21 @@
     <meta name="twitter:image" content="https://simplemadeblinds.mx/opengraph.jpg" />
     <link rel="icon" type="image/png" href="/favicon.png" />
 
+    <!-- Products are listed as Service, not Product: Google validates Product
+         for merchant/snippet rich results and flagged all of them as invalid
+         without price, reviews or ratings, which we do not publish. -->
     <script type="application/ld+json">
     {
       "@context": "https://schema.org",
       "@type": ["LocalBusiness", "HomeAndConstructionBusiness"],
-      "additionalType": "https://schema.org/WindowCoveringStore",
       "name": "Simple Made Blinds Mexico",
       "alternateName": "SMB MX",
-      "description": "Sistemas avanzados de protección solar y confort térmico. Tecnología europea de más de 30 años para el clima de México. Persianas exteriores, cortinas screen ZIP, cortinas de aluminio y mosquiteras.",
+      "description": "Persianas europeas de aluminio fabricadas en Europa por Fart Produkt (Polonia): persianas de seguridad enrollables con clases de resistencia a la intrusión RC2/RC3 (EN 1627), persianas venecianas exteriores, screen exterior ZIP y mosquiteros. Proyectos para desarrollos, hoteles y residencias en México.",
       "url": "https://simplemadeblinds.mx/",
       "logo": "https://simplemadeblinds.mx/logo-email.png",
       "image": "https://simplemadeblinds.mx/opengraph.jpg",
       "telephone": "+52-81-1577-9958",
+      "email": "info@simplemadeblinds.mx",
       "address": {
         "@type": "PostalAddress",
         "streetAddress": "Cambridge 103",
@@ -43,62 +46,56 @@
         "addressRegion": "Nuevo León",
         "addressCountry": "MX"
       },
-      "geo": {
-        "@type": "GeoCoordinates",
-        "latitude": 25.6866,
-        "longitude": -100.3161
-      },
-      "areaServed": {
-        "@type": "State",
-        "name": "Nuevo León"
-      },
-      "priceRange": "$$",
-      "currenciesAccepted": "MXN",
-      "paymentAccepted": "Cash, Credit Card, Bank Transfer",
+      "areaServed": [
+        { "@type": "City", "name": "Monterrey" },
+        { "@type": "City", "name": "Guadalajara" },
+        { "@type": "City", "name": "Ciudad de México" },
+        { "@type": "State", "name": "Nuevo León" },
+        { "@type": "State", "name": "Quintana Roo" }
+      ],
       "sameAs": [
-        "https://www.instagram.com/office_smb",
-        "https://wa.me/528115779958"
+        "https://www.instagram.com/office_smb"
       ],
       "contactPoint": {
         "@type": "ContactPoint",
         "telephone": "+52-81-1577-9958",
-        "contactType": "customer service",
+        "contactType": "sales",
         "availableLanguage": ["Spanish", "Polish", "English"]
       },
       "hasOfferCatalog": {
         "@type": "OfferCatalog",
-        "name": "Sistemas de Protección Solar",
+        "name": "Persianas exteriores de aluminio",
         "itemListElement": [
           {
             "@type": "Offer",
             "itemOffered": {
-              "@type": "Product",
-              "name": "Persianas Exteriores",
-              "description": "Persianas exteriores de aluminio con certificación de resistencia RC2/RC3"
+              "@type": "Service",
+              "name": "Persianas europeas de seguridad",
+              "description": "Persianas enrollables exteriores de aluminio con poliuretano; opción con clases RC2/RC3 de resistencia a la intrusión (EN 1627)."
             }
           },
           {
             "@type": "Offer",
             "itemOffered": {
-              "@type": "Product",
-              "name": "Cortinas Screen ZIP",
-              "description": "Cortinas screen con sistema ZIP para máxima estabilidad y resistencia al viento"
+              "@type": "Service",
+              "name": "Persianas venecianas exteriores",
+              "description": "Persianas de lamas orientables de aluminio (C80, Z90) para fachadas."
             }
           },
           {
             "@type": "Offer",
             "itemOffered": {
-              "@type": "Product",
-              "name": "Cortinas de Aluminio Fachada",
-              "description": "Protección solar de aluminio para fachadas arquitectónicas"
+              "@type": "Service",
+              "name": "Screen exterior ZIP",
+              "description": "Cortina enrollable exterior con tejido técnico y sistema ZIP en las guías."
             }
           },
           {
             "@type": "Offer",
             "itemOffered": {
-              "@type": "Product",
-              "name": "Mosquiteras",
-              "description": "Sistemas de mosquiteras integradas para puertas y ventanas"
+              "@type": "Service",
+              "name": "Mosquiteros",
+              "description": "Mosquiteros plisados, enrollables, abatibles y de marco fijo de aluminio para puertas y ventanas."
             }
           }
         ]
@@ -118,7 +115,7 @@
     <link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Manrope:wght@200..800&family=Space+Grotesk:wght@300..700&display=swap" />
     <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@200..800&family=Space+Grotesk:wght@300..700&display=swap" rel="stylesheet" media="print" onload="this.media='all'" />
     <noscript><link href="https://fonts.googleapis.com/css2?family=Manrope:wght@200..800&family=Space+Grotesk:wght@300..700&display=swap" rel="stylesheet" /></noscript>
-    <script type="module" crossorigin src="/assets/index-9GxeedDP.js"></script>
+    <script type="module" crossorigin src="/assets/index-vrq4mbBE.js"></script>
     <link rel="modulepreload" crossorigin href="/assets/vendor-query-DuS0LZEi.js">
     <link rel="modulepreload" crossorigin href="/assets/vendor-radix-DU2feTXh.js">
     <link rel="modulepreload" crossorigin href="/assets/vendor-motion-2CvDRLz1.js">
