@@ -234,6 +234,21 @@ if ($apiKey !== '') {
         'html'     => $ownerHtml,
     ]);
 }
+// A Resend failure is otherwise invisible when the mail() fallback succeeds,
+// and without Resend customers get no auto-reply - so it is always logged.
+function logResendProblem(string $home, string $what, string $problem): void
+{
+    @file_put_contents(
+        $home . '/smb-resend-errors.log',
+        date('c') . "\t" . $what . "\t" . $problem . "\n",
+        FILE_APPEND | LOCK_EX
+    );
+}
+
+if ($apiKey !== '' && !$sent) {
+    logResendProblem($home, 'owner', $problem);
+}
+
 if (!$sent && sendViaMail(CONTACT_EMAIL, $ownerSubject, $ownerHtml, $lead['email'])) {
     $sent = true;
 }
@@ -289,13 +304,16 @@ if ($apiKey !== '') {
 
     // Resend allows 2 requests per second; the Express version waited 3 s.
     sleep(1);
-    sendViaResend($apiKey, [
+    list($replied, $replyProblem) = sendViaResend($apiKey, [
         'from'     => 'Simple Made Blinds Mexico <' . SENDER . '>',
         'to'       => [$lead['email']],
         'reply_to' => [CONTACT_EMAIL],
         'subject'  => $t['subject'],
         'html'     => $customerHtml,
     ]);
+    if (!$replied) {
+        logResendProblem($home, 'auto-reply', $replyProblem);
+    }
 }
 
 respond(201, ['ok' => true]);

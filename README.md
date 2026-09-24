@@ -52,7 +52,9 @@ Plik źródłowy jest w `client/public/.htaccess` w repo ze źródłami.
 Postgres z Replita. Klucz Resend leży w `/home/myciu/smb-config.php`
 (`<?php return ['resend_api_key' => 're_...'];`), poza katalogiem publicznym
 i poza repo. Bez klucza powiadomienie idzie lokalnym `mail()` na info@,
-a autoodpowiedź do klienta nie wychodzi.
+a autoodpowiedź do klienta nie wychodzi. Każdy błąd Resend trafia do
+`/home/myciu/smb-resend-errors.log` — także wtedy, gdy `mail()` dostarczył
+powiadomienie, bo inaczej brak autoodpowiedzi byłby niewidoczny.
 
 **Zmiany treści robi się w repo ze źródłami.** Ręczna edycja plików w `site/`
 zostanie skasowana przy najbliższym `zbuduj.ps1`.
