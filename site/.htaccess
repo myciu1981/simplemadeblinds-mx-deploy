@@ -1,0 +1,80 @@
+# simplemadeblinds.mx - Apache config on cPanel (nethero).
+# This file lives in client/public, so Vite copies it into dist/public and the
+# deploy puts it in the domain's document root. Edit it HERE, not on the
+# server - every deploy overwrites the server copy.
+
+# nethero returns 403 to AI crawlers (ClaudeBot, GPTBot, PerplexityBot, CCBot)
+# in server config outside cPanel. This lifts that block.
+<IfModule mod_authz_core.c>
+    Require all granted
+</IfModule>
+
+Options -Indexes
+
+<IfModule mod_rewrite.c>
+    RewriteEngine On
+
+    # HTTPS. X-Forwarded-Proto is checked too, so the rule cannot loop if the
+    # domain is ever put behind a proxy that talks to the origin over HTTP.
+    RewriteCond %{HTTPS} off
+    RewriteCond %{HTTP:X-Forwarded-Proto} !https [NC]
+    RewriteRule ^ https://%{HTTP_HOST}%{REQUEST_URI} [L,R=301]
+
+    # Canonical host has no www.
+    RewriteCond %{HTTP_HOST} ^www\.(.+)$ [NC]
+    RewriteRule ^ https://%1%{REQUEST_URI} [L,R=301]
+
+    # Lead form. The front end posts to /api/leads - on Replit that was Express,
+    # here it is PHP. Same URL, same JSON contract, front end unchanged.
+    RewriteRule ^api/leads/?$ /api/leads.php [L]
+
+    # /products is prerendered to products.html. The canonical URL has no
+    # trailing slash and no extension, so both variants redirect to it.
+    RewriteRule ^products/$ /products [L,R=301]
+    RewriteCond %{THE_REQUEST} \s/products\.html[\s?] [NC]
+    RewriteRule ^ /products [L,R=301]
+    RewriteRule ^products$ /products.html [L]
+
+    # Old Replit-era /index.html links go to the root.
+    RewriteCond %{THE_REQUEST} \s/index\.html[\s?] [NC]
+    RewriteRule ^ / [L,R=301]
+</IfModule>
+
+# Every route is a real file, so an unknown URL gets a real 404, not the
+# homepage with status 200.
+ErrorDocument 404 /404.html
+
+<IfModule mod_deflate.c>
+    AddOutputFilterByType DEFLATE text/html text/plain text/css text/xml \
+        application/javascript application/json application/xml \
+        image/svg+xml application/rss+xml
+</IfModule>
+
+<IfModule mod_headers.c>
+    Header always set X-Content-Type-Options "nosniff"
+    Header always set Referrer-Policy "strict-origin-when-cross-origin"
+    Header always set Permissions-Policy "geolocation=(), microphone=(), camera=(), interest-cohort=()"
+    Header always set Strict-Transport-Security "max-age=31536000" env=HTTPS
+
+    # Names in assets/ carry a content hash - safe to cache for a year.
+    SetEnvIf Request_URI "^/assets/" LONG_CACHE
+    Header set Cache-Control "public, max-age=31536000, immutable" env=LONG_CACHE
+
+    # Gallery, PDFs, favicon and og image keep fixed names: a week, so a
+    # replaced file still reaches returning visitors.
+    <FilesMatch "\.(webp|jpg|jpeg|png|svg|ico|gif|pdf)$">
+        Header set Cache-Control "public, max-age=604800" env=!LONG_CACHE
+    </FilesMatch>
+
+    # HTML and gallery.json must always revalidate, or a deploy would not
+    # reach returning visitors.
+    <FilesMatch "\.(html|xml|txt|json)$">
+        Header set Cache-Control "no-cache, must-revalidate"
+    </FilesMatch>
+
+    <FilesMatch "^leads\.php$">
+        Header set Cache-Control "no-store"
+    </FilesMatch>
+</IfModule>
+
+AddDefaultCharset UTF-8

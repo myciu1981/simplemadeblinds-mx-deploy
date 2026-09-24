@@ -1,0 +1,3 @@
+# To repo trzyma gotowe pliki wdrożeniowe — mają trafić na serwer bajt w bajt
+# takie, jakie wyszły z builda. Żadnej konwersji końców linii.
+* -text
