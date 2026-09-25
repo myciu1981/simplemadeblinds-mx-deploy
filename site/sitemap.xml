@@ -15,4 +15,79 @@
     <priority>0.8</priority>
   </url>
 
+  <!-- Technical data sheets (ES / EN / PL). The EN and PL links only appear after
+       switching language in the browser, so the sitemap is how Google finds them. -->
+  <url>
+    <loc>https://simplemadeblinds.mx/docs/fichas-persianas-seguridad.pdf</loc>
+    <lastmod>2026-09-25</lastmod>
+    <changefreq>yearly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  <url>
+    <loc>https://simplemadeblinds.mx/docs/fichas-persianas-exteriores.pdf</loc>
+    <lastmod>2026-09-25</lastmod>
+    <changefreq>yearly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  <url>
+    <loc>https://simplemadeblinds.mx/docs/fichas-pantallas-screen.pdf</loc>
+    <lastmod>2026-09-25</lastmod>
+    <changefreq>yearly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  <url>
+    <loc>https://simplemadeblinds.mx/docs/fichas-mosquiteras.pdf</loc>
+    <lastmod>2026-09-25</lastmod>
+    <changefreq>yearly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  <url>
+    <loc>https://simplemadeblinds.mx/docs/sheets-roller-shutters.pdf</loc>
+    <lastmod>2026-09-25</lastmod>
+    <changefreq>yearly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  <url>
+    <loc>https://simplemadeblinds.mx/docs/sheets-external-blinds.pdf</loc>
+    <lastmod>2026-09-25</lastmod>
+    <changefreq>yearly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  <url>
+    <loc>https://simplemadeblinds.mx/docs/sheets-screens.pdf</loc>
+    <lastmod>2026-09-25</lastmod>
+    <changefreq>yearly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  <url>
+    <loc>https://simplemadeblinds.mx/docs/sheets-mosquito-screens.pdf</loc>
+    <lastmod>2026-09-25</lastmod>
+    <changefreq>yearly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  <url>
+    <loc>https://simplemadeblinds.mx/docs/karty-rolety-zewnetrzne.pdf</loc>
+    <lastmod>2026-09-25</lastmod>
+    <changefreq>yearly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  <url>
+    <loc>https://simplemadeblinds.mx/docs/karty-zaluzje-fasadowe.pdf</loc>
+    <lastmod>2026-09-25</lastmod>
+    <changefreq>yearly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  <url>
+    <loc>https://simplemadeblinds.mx/docs/karty-oslony-screen.pdf</loc>
+    <lastmod>2026-09-25</lastmod>
+    <changefreq>yearly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  <url>
+    <loc>https://simplemadeblinds.mx/docs/karty-moskitiery.pdf</loc>
+    <lastmod>2026-09-25</lastmod>
+    <changefreq>yearly</changefreq>
+    <priority>0.5</priority>
+  </url>
+
 </urlset>
