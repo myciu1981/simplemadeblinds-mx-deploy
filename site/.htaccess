@@ -58,6 +58,8 @@ ErrorDocument 404 /404.html
 
     # Names in assets/ carry a content hash - safe to cache for a year.
     SetEnvIf Request_URI "^/assets/" LONG_CACHE
+    # Gallery thumbnails too (script/gallery-thumbs.mjs).
+    SetEnvIf Request_URI "^/gallery/thumbs/" LONG_CACHE
     Header set Cache-Control "public, max-age=31536000, immutable" env=LONG_CACHE
 
     # Gallery, PDFs, favicon and og image keep fixed names: a week, so a
