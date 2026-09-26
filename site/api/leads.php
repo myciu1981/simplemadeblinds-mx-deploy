@@ -203,7 +203,7 @@ $row = static function (string $label, string $value): string {
 };
 
 $rows = $row('Imię i nazwisko', h($lead['name']))
-    . $row('Email', '<a href="mailto:' . h($lead['email']) . '" style="color:#1A365D;">' . h($lead['email']) . '</a>')
+    . $row('Email', '<a href="mailto:' . h($lead['email']) . '" style="color:#1A355C;">' . h($lead['email']) . '</a>')
     . $row('Telefon', h($lead['phone'] !== '' ? $lead['phone'] : '—'))
     . $row('Rola', h($roleLabels[$lead['role']] ?? $lead['role']))
     . ($lead['projectType'] !== '' ? $row('Typ projektu', h($projectLabels[$lead['projectType']] ?? $lead['projectType'])) : '')
@@ -211,8 +211,8 @@ $rows = $row('Imię i nazwisko', h($lead['name']))
     . $row('Język', strtoupper($lead['language']));
 
 $ownerHtml = '<div style="font-family:\'Segoe UI\',Arial,sans-serif;max-width:600px;margin:0 auto;background:#ffffff;">'
-    . '<div style="background:#1A365D;padding:24px 32px;"><h1 style="color:#ffffff;margin:0;font-size:20px;font-weight:400;">Simple Made Blinds Mexico</h1></div>'
-    . '<div style="padding:32px;"><h2 style="color:#1A365D;font-size:18px;margin:0 0 24px;">Nowe zapytanie z formularza</h2>'
+    . '<div style="background:#1A355C;padding:24px 32px;"><h1 style="color:#ffffff;margin:0;font-size:20px;font-weight:400;">Simple Made Blinds Mexico</h1></div>'
+    . '<div style="padding:32px;"><h2 style="color:#1A355C;font-size:18px;margin:0 0 24px;">Nowe zapytanie z formularza</h2>'
     . '<table style="width:100%;border-collapse:collapse;">' . $rows . '</table>'
     . '<p style="margin-top:24px;font-size:13px;color:#94a3b8;">Wiadomość wysłana automatycznie z formularza na stronie ' . SITE . '</p>'
     . '</div></div>';
@@ -291,15 +291,15 @@ if ($apiKey !== '') {
     $firstName = explode(' ', $lead['name'])[0];
 
     $customerHtml = '<div style="font-family:\'Segoe UI\',Arial,sans-serif;max-width:600px;margin:0 auto;background:#ffffff;border:1px solid #e2e8f0;border-radius:8px;overflow:hidden;">'
-        . '<div style="background:#1A365D;padding:22px;text-align:center;"><img src="https://' . SITE . '/logo-email.png" alt="Simple Made Blinds Mexico" style="max-width:175px;height:auto;display:block;margin:0 auto;" /></div>'
+        . '<div style="background:#1A355C;padding:22px;text-align:center;"><img src="https://' . SITE . '/logo-email.png" alt="Simple Made Blinds Mexico" style="max-width:175px;height:auto;display:block;margin:0 auto;" /></div>'
         . '<div style="padding:40px 32px;">'
-        . '<h2 style="color:#1A365D;font-size:20px;margin:0 0 20px;font-weight:600;">' . h(sprintf($t['greeting'], $firstName)) . '</h2>'
+        . '<h2 style="color:#1A355C;font-size:20px;margin:0 0 20px;font-weight:600;">' . h(sprintf($t['greeting'], $firstName)) . '</h2>'
         . '<p style="color:#334155;line-height:1.6;margin:0 0 20px;font-size:16px;">' . $t['body'] . '</p>'
         . '<p style="color:#334155;line-height:1.6;margin:0 0 24px;font-size:16px;">' . $t['sub']
-        . ' <a href="mailto:' . CONTACT_EMAIL . '" style="color:#1A365D;text-decoration:underline;font-weight:500;">' . CONTACT_EMAIL . '</a></p>'
+        . ' <a href="mailto:' . CONTACT_EMAIL . '" style="color:#1A355C;text-decoration:underline;font-weight:500;">' . CONTACT_EMAIL . '</a></p>'
         . '<div style="border-top:1px solid #e2e8f0;margin-top:32px;padding-top:24px;"><p style="color:#94a3b8;font-size:14px;margin:0;line-height:1.5;">'
         . '<strong style="color:#64748b;">Simple Made Blinds Mexico</strong><br />European-engineered shading solutions<br />'
-        . '<a href="https://' . SITE . '" style="color:#1A365D;text-decoration:none;">' . SITE . '</a></p></div>'
+        . '<a href="https://' . SITE . '" style="color:#1A355C;text-decoration:none;">' . SITE . '</a></p></div>'
         . '</div></div>';
 
     // Resend allows 2 requests per second; the Express version waited 3 s.
