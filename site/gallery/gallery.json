@@ -15,10 +15,10 @@
   { "src": "/gallery/venetian-1.jpg", "category": "venetian", "alt": "Persianas de fachada en edificio comercial" },
   { "src": "/gallery/venetian-2.jpg", "category": "venetian", "alt": "Persianas venecianas exteriores en edificio moderno" },
   { "src": "/gallery/venetian-3.webp", "category": "venetian", "alt": "Fachada industrial con sistema de persianas venecianas" },
-  { "src": "/gallery/screen-1.jpg", "category": "screen", "alt": "Sistema de pantalla screen en exterior de ventana" },
-  { "src": "/gallery/screen-2.webp", "category": "screen", "alt": "Pantallas screen en terraza cubierta" },
-  { "src": "/gallery/screen-3.webp", "category": "screen", "alt": "Pantalla screen de gran formato en casa" },
-  { "src": "/gallery/screen-5.webp", "category": "screen", "alt": "Cortinas screen oscuras en cocina contemporánea" },
+  { "src": "/gallery/screen-1.jpg", "category": "screen", "alt": "Cortina enrollable exterior en ventana" },
+  { "src": "/gallery/screen-2.webp", "category": "screen", "alt": "Cortinas enrollables exteriores en terraza cubierta" },
+  { "src": "/gallery/screen-3.webp", "category": "screen", "alt": "Cortina enrollable exterior de gran formato en casa" },
+  { "src": "/gallery/screen-5.webp", "category": "screen", "alt": "Cortinas enrollables exteriores oscuras en cocina contemporánea" },
   { "src": "/gallery/mosquito-1.webp", "category": "mosquito", "alt": "Mosquitera en puerta corrediza" },
   { "src": "/gallery/mosquito-2.jpg", "category": "mosquito", "alt": "Detalle de malla de mosquitera" }
 ]
