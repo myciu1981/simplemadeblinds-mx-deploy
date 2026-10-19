@@ -198,8 +198,8 @@ $projectLabels = [
 ];
 
 $row = static function (string $label, string $value): string {
-    return '<tr><td style="padding:10px 0;border-bottom:1px solid #e2e8f0;color:#64748b;width:140px;">' . $label
-        . '</td><td style="padding:10px 0;border-bottom:1px solid #e2e8f0;color:#1e293b;">' . $value . '</td></tr>';
+    return '<tr><td style="padding:10px 0;border-bottom:1px solid #DDDFE3;color:#697080;width:140px;">' . $label
+        . '</td><td style="padding:10px 0;border-bottom:1px solid #DDDFE3;color:#21242C;">' . $value . '</td></tr>';
 };
 
 $rows = $row('Imię i nazwisko', h($lead['name']))
@@ -214,7 +214,7 @@ $ownerHtml = '<div style="font-family:\'Segoe UI\',Arial,sans-serif;max-width:60
     . '<div style="background:#1A355C;padding:24px 32px;"><h1 style="color:#ffffff;margin:0;font-size:20px;font-weight:400;">Simple Made Blinds Mexico</h1></div>'
     . '<div style="padding:32px;"><h2 style="color:#1A355C;font-size:18px;margin:0 0 24px;">Nowe zapytanie z formularza</h2>'
     . '<table style="width:100%;border-collapse:collapse;">' . $rows . '</table>'
-    . '<p style="margin-top:24px;font-size:13px;color:#94a3b8;">Wiadomość wysłana automatycznie z formularza na stronie ' . SITE . '</p>'
+    . '<p style="margin-top:24px;font-size:13px;color:#697080;">Wiadomość wysłana automatycznie z formularza na stronie ' . SITE . '</p>'
     . '</div></div>';
 
 $ownerSubject = 'Nowe zapytanie od ' . $lead['name'];
@@ -290,15 +290,15 @@ if ($apiKey !== '') {
     $t = $content[$lead['language']];
     $firstName = explode(' ', $lead['name'])[0];
 
-    $customerHtml = '<div style="font-family:\'Segoe UI\',Arial,sans-serif;max-width:600px;margin:0 auto;background:#ffffff;border:1px solid #e2e8f0;border-radius:8px;overflow:hidden;">'
-        . '<div style="background:#1A355C;padding:22px;text-align:center;"><img src="https://' . SITE . '/logo-email.png" alt="Simple Made Blinds Mexico" style="max-width:175px;height:auto;display:block;margin:0 auto;" /></div>'
+    $customerHtml = '<div style="font-family:\'Segoe UI\',Arial,sans-serif;max-width:600px;margin:0 auto;background:#ffffff;border:1px solid #DDDFE3;border-radius:8px;overflow:hidden;">'
+        . '<div style="background:#1A355C;padding:22px;text-align:center;"><img src="https://' . SITE . '/logo-email.png" alt="Simple Made Blinds Mexico" style="max-width:240px;height:auto;display:block;margin:0 auto;" /></div>'
         . '<div style="padding:40px 32px;">'
         . '<h2 style="color:#1A355C;font-size:20px;margin:0 0 20px;font-weight:600;">' . h(sprintf($t['greeting'], $firstName)) . '</h2>'
-        . '<p style="color:#334155;line-height:1.6;margin:0 0 20px;font-size:16px;">' . $t['body'] . '</p>'
-        . '<p style="color:#334155;line-height:1.6;margin:0 0 24px;font-size:16px;">' . $t['sub']
+        . '<p style="color:#21242C;line-height:1.6;margin:0 0 20px;font-size:16px;">' . $t['body'] . '</p>'
+        . '<p style="color:#21242C;line-height:1.6;margin:0 0 24px;font-size:16px;">' . $t['sub']
         . ' <a href="mailto:' . CONTACT_EMAIL . '" style="color:#1A355C;text-decoration:underline;font-weight:500;">' . CONTACT_EMAIL . '</a></p>'
-        . '<div style="border-top:1px solid #e2e8f0;margin-top:32px;padding-top:24px;"><p style="color:#94a3b8;font-size:14px;margin:0;line-height:1.5;">'
-        . '<strong style="color:#64748b;">Simple Made Blinds Mexico</strong><br />European-engineered shading solutions<br />'
+        . '<div style="border-top:1px solid #DDDFE3;margin-top:32px;padding-top:24px;"><p style="color:#697080;font-size:14px;margin:0;line-height:1.5;">'
+        . '<strong style="color:#697080;">Simple Made Blinds Mexico</strong><br />European-engineered shading solutions<br />'
         . '<a href="https://' . SITE . '" style="color:#1A355C;text-decoration:none;">' . SITE . '</a></p></div>'
         . '</div></div>';
 
